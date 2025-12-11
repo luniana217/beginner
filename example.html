@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 / 회원가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 360px;
+      background: #fff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 12px;
+    }
+    button:hover {
+      background: #1559b0;
+    }
+    .switch {
+      text-align: center;
+      margin-top: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+    .switch:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="loginForm">
+      <h2>로그인</h2>
+      <div class="form-group">
+        <label for="loginEmail">이메일</label>
+        <input type="email" id="loginEmail" placeholder="email@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="loginPw">비밀번호</label>
+        <input type="password" id="loginPw" placeholder="비밀번호" />
+      </div>
+      <button>로그인</button>
+      <div class="switch" onclick="showSignup()">회원가입으로 이동</div>
+    </div>
+
+    <div id="signupForm" style="display:none;">
+      <h2>회원가입</h2>
+      <div class="form-group">
+        <label for="signupName">이름</label>
+        <input type="text" id="signupName" placeholder="홍길동" />
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">이메일</label>
+        <input type="email" id="signupEmail" placeholder="email@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="signupPw">비밀번호</label>
+        <input type="password" id="signupPw" placeholder="비밀번호" />
+      </div>
+      <button onclick="signupComplete()">회원가입</button>
+      <div class="switch" onclick="showLogin()">로그인으로 이동</div>
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('signupForm').style.display = 'none';
+    }
+      function signupComplete() {
+      // 실제 회원가입 처리 후 이동시키는 영역
+      // 예: 회원가입 API 성공 시 아래 redirect 실행
+      window.location.href = 'https://example.com'; // 이동할 URL
+    }
+  </script>
+</body>
+</html>
