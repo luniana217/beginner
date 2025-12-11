@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 후 페이지 선택</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 360px;
+      background: #fff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #1a73e8;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button:hover {
+      background: #1559b0;
+    }
+    #afterLogin {
+      display: none;
+      text-align: center;
+    }
+    .page-btn {
+      margin-top: 14px;
+      padding: 12px;
+      width: 100%;
+      background: #28a745;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .page-btn:hover {
+      background: #1e7c34;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 로그인 영역 -->
+    <div id="loginArea">
+      <h2>로그인</h2>
+      <div class="form-group">
+        <label for="email">이메일</label>
+        <input type="email" id="email" placeholder="email@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="pw">비밀번호</label>
+        <input type="password" id="pw" placeholder="비밀번호" />
+      </div>
+      <button onclick="login()">로그인</button>
+    </div>
+
+    <!-- 로그인 후 버튼 영역 -->
+    <div id="afterLogin">
+      <h2>페이지 선택</h2>
+      <button class="page-btn" onclick="goPage1()">Page 1 이동</button>
+      <button class="page-btn" onclick="goPage2()">Page 2 이동</button>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      // 실제 로그인 검증 로직 필요 (API 등)
+      // 여기서는 단순히 화면 전환
+      document.getElementById('loginArea').style.display = 'none';
+      document.getElementById('afterLogin').style.display = 'block';
+    }
+
+    function goPage1() {
+      window.location.href = 'page1.html';
+    }
+
+    function goPage2() {
+      window.location.href = 'page2.html';
+    }
+  </script>
+</body>
+</html>
